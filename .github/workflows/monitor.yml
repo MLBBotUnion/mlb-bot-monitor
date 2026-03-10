@@ -1,0 +1,39 @@
+name: MLB Bot Monitor
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # Every 5 minutes
+  workflow_dispatch:          # Also allow manual trigger from GitHub UI
+
+permissions:
+  contents: write             # Needed to commit status.json back to repo
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run health checks
+        env:
+          # Add these in: GitHub repo → Settings → Secrets → Actions
+          ACUNA_BOT_HEALTH_URL: ${{ secrets.ACUNA_BOT_HEALTH_URL }}
+          DONTJINX_BOT_HEALTH_URL: ${{ secrets.DONTJINX_BOT_HEALTH_URL }}
+          TRACKER_BOT_HEALTH_URL: ${{ secrets.TRACKER_BOT_HEALTH_URL }}
+          GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+        run: node scripts/health-check.js
+
+      - name: Commit updated status.json
+        run: |
+          git config user.name  "MLB Bot Monitor"
+          git config user.email "monitor@github-actions"
+          git add public/status.json
+          # Only commit if something changed
+          git diff --staged --quiet || git commit -m "chore: update bot status [skip ci]"
+          git push
