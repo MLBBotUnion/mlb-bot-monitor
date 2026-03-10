@@ -244,7 +244,7 @@ export default function App() {
   const fetchStatus = useCallback(async () => {
     try {
       // Cache-bust so GitHub Pages doesn't serve stale status.json
-      const res = await fetch(`/status.json?t=${Date.now()}`)
+      const res = await fetch(`/mlb-bot-monitor/status.json?t=${Date.now()}`)
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const data = await res.json()
       setStatusData(data)
