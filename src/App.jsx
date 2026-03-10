@@ -99,7 +99,7 @@ function AIDiagnosis({ bot, checkData }) {
     ).join('\n')
 
     try {
-      const res = await fetch('https://corsproxy.io/?https://api.anthropic.com/v1/messages', {
+      const res = await fetch('https://anthropic-proxy-255785929699.us-central1.run.app/v1/messages', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
