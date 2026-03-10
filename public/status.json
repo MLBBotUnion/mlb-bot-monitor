@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T00:00:00.000Z",
+  "generatedAt": "2026-03-10T01:31:35.702Z",
   "bots": {
     "acuna-hr": {
       "id": "acuna-hr",
@@ -7,14 +7,38 @@
       "emoji": "💥",
       "description": "Tweets every Ronald Acuña home run with Statcast GIF",
       "gcpService": "Cloud Run",
-      "overall": "UNKNOWN",
-      "scannedAt": null,
+      "overall": "HEALTHY",
       "checks": {
-        "mlb_api":      { "label": "MLB Stats API",  "status": "UNKNOWN", "latency": null },
-        "statcast":     { "label": "Statcast",        "status": "UNKNOWN", "latency": null },
-        "twitter_api":  { "label": "X / Twitter API", "status": "UNKNOWN", "latency": null },
-        "gcp_function": { "label": "GCP Cloud Run",   "status": "UNKNOWN", "latency": null }
-      }
+        "mlb_api": {
+          "status": "HEALTHY",
+          "latency": 131,
+          "httpCode": 200,
+          "label": "MLB Stats API",
+          "checkedAt": "2026-03-10T01:31:31.432Z"
+        },
+        "statcast": {
+          "status": "HEALTHY",
+          "latency": 754,
+          "httpCode": 200,
+          "label": "Statcast",
+          "checkedAt": "2026-03-10T01:31:32.186Z"
+        },
+        "twitter_api": {
+          "status": "HEALTHY",
+          "latency": 43,
+          "httpCode": 401,
+          "label": "X / Twitter API",
+          "checkedAt": "2026-03-10T01:31:32.230Z"
+        },
+        "gcp_function": {
+          "status": "HEALTHY",
+          "latency": 143,
+          "httpCode": 200,
+          "label": "GCP Cloud Run",
+          "checkedAt": "2026-03-10T01:31:32.373Z"
+        }
+      },
+      "scannedAt": "2026-03-10T01:31:32.373Z"
     },
     "dont-jinx-it": {
       "id": "dont-jinx-it",
@@ -22,14 +46,38 @@
       "emoji": "🤫",
       "description": "Tracks perfect games, no-hitters & rare MLB events",
       "gcpService": "Cloud Functions + Pub/Sub",
-      "overall": "UNKNOWN",
-      "scannedAt": null,
+      "overall": "HEALTHY",
       "checks": {
-        "mlb_live":     { "label": "MLB Live Feed",   "status": "UNKNOWN", "latency": null },
-        "twitter_api":  { "label": "X / Twitter API", "status": "UNKNOWN", "latency": null },
-        "gcp_pubsub":   { "label": "GCP Pub/Sub",     "status": "UNKNOWN", "latency": null },
-        "gcp_function": { "label": "GCP Function",    "status": "UNKNOWN", "latency": null }
-      }
+        "mlb_live": {
+          "status": "HEALTHY",
+          "latency": 87,
+          "httpCode": 200,
+          "label": "MLB Live Feed",
+          "checkedAt": "2026-03-10T01:31:32.460Z"
+        },
+        "twitter_api": {
+          "status": "HEALTHY",
+          "latency": 26,
+          "httpCode": 401,
+          "label": "X / Twitter API",
+          "checkedAt": "2026-03-10T01:31:32.486Z"
+        },
+        "gcp_pubsub": {
+          "status": "HEALTHY",
+          "latency": 190,
+          "httpCode": 403,
+          "label": "GCP Pub/Sub",
+          "checkedAt": "2026-03-10T01:31:32.676Z"
+        },
+        "gcp_function": {
+          "status": "HEALTHY",
+          "latency": 198,
+          "httpCode": 403,
+          "label": "GCP Function",
+          "checkedAt": "2026-03-10T01:31:32.874Z"
+        }
+      },
+      "scannedAt": "2026-03-10T01:31:32.875Z"
     },
     "4040-tracker": {
       "id": "4040-tracker",
@@ -37,14 +85,38 @@
       "emoji": "⚡",
       "description": "Monitors MLB players chasing 40 HR / 40 SB milestone",
       "gcpService": "Cloud Scheduler + Cloud Run",
-      "overall": "UNKNOWN",
-      "scannedAt": null,
+      "overall": "HEALTHY",
       "checks": {
-        "mlb_api":       { "label": "MLB Stats API",    "status": "UNKNOWN", "latency": null },
-        "twitter_api":   { "label": "X / Twitter API",  "status": "UNKNOWN", "latency": null },
-        "gcp_scheduler": { "label": "Cloud Scheduler",  "status": "UNKNOWN", "latency": null },
-        "gcp_function":  { "label": "GCP Cloud Run",    "status": "UNKNOWN", "latency": null }
-      }
+        "mlb_api": {
+          "status": "HEALTHY",
+          "latency": 4,
+          "httpCode": 200,
+          "label": "MLB Stats API",
+          "checkedAt": "2026-03-10T01:31:32.879Z"
+        },
+        "twitter_api": {
+          "status": "HEALTHY",
+          "latency": 25,
+          "httpCode": 401,
+          "label": "X / Twitter API",
+          "checkedAt": "2026-03-10T01:31:32.904Z"
+        },
+        "gcp_scheduler": {
+          "status": "HEALTHY",
+          "latency": 2747,
+          "httpCode": 200,
+          "label": "Cloud Scheduler",
+          "checkedAt": "2026-03-10T01:31:35.651Z"
+        },
+        "gcp_function": {
+          "status": "HEALTHY",
+          "latency": 51,
+          "httpCode": 200,
+          "label": "GCP Cloud Run",
+          "checkedAt": "2026-03-10T01:31:35.702Z"
+        }
+      },
+      "scannedAt": "2026-03-10T01:31:35.702Z"
     }
   }
 }
