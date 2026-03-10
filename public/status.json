@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-03-09T00:00:00.000Z",
+  "bots": {
+    "acuna-hr": {
+      "id": "acuna-hr",
+      "name": "Acuña HR Bot",
+      "emoji": "💥",
+      "description": "Tweets every Ronald Acuña home run with Statcast GIF",
+      "gcpService": "Cloud Run",
+      "overall": "UNKNOWN",
+      "scannedAt": null,
+      "checks": {
+        "mlb_api":      { "label": "MLB Stats API",  "status": "UNKNOWN", "latency": null },
+        "statcast":     { "label": "Statcast",        "status": "UNKNOWN", "latency": null },
+        "twitter_api":  { "label": "X / Twitter API", "status": "UNKNOWN", "latency": null },
+        "gcp_function": { "label": "GCP Cloud Run",   "status": "UNKNOWN", "latency": null }
+      }
+    },
+    "dont-jinx-it": {
+      "id": "dont-jinx-it",
+      "name": "Don't Jinx It Bot",
+      "emoji": "🤫",
+      "description": "Tracks perfect games, no-hitters & rare MLB events",
+      "gcpService": "Cloud Functions + Pub/Sub",
+      "overall": "UNKNOWN",
+      "scannedAt": null,
+      "checks": {
+        "mlb_live":     { "label": "MLB Live Feed",   "status": "UNKNOWN", "latency": null },
+        "twitter_api":  { "label": "X / Twitter API", "status": "UNKNOWN", "latency": null },
+        "gcp_pubsub":   { "label": "GCP Pub/Sub",     "status": "UNKNOWN", "latency": null },
+        "gcp_function": { "label": "GCP Function",    "status": "UNKNOWN", "latency": null }
+      }
+    },
+    "4040-tracker": {
+      "id": "4040-tracker",
+      "name": "40-40 Tracker Bot",
+      "emoji": "⚡",
+      "description": "Monitors MLB players chasing 40 HR / 40 SB milestone",
+      "gcpService": "Cloud Scheduler + Cloud Run",
+      "overall": "UNKNOWN",
+      "scannedAt": null,
+      "checks": {
+        "mlb_api":       { "label": "MLB Stats API",    "status": "UNKNOWN", "latency": null },
+        "twitter_api":   { "label": "X / Twitter API",  "status": "UNKNOWN", "latency": null },
+        "gcp_scheduler": { "label": "Cloud Scheduler",  "status": "UNKNOWN", "latency": null },
+        "gcp_function":  { "label": "GCP Cloud Run",    "status": "UNKNOWN", "latency": null }
+      }
+    }
+  }
+}
