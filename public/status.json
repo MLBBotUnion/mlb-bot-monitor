@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T22:55:53.335Z",
+  "generatedAt": "2026-03-10T23:32:37.950Z",
   "bots": {
     "acuna-hr": {
       "id": "acuna-hr",
@@ -11,34 +11,34 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 163,
+          "latency": 171,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-03-10T22:55:50.980Z"
+          "checkedAt": "2026-03-10T23:32:35.205Z"
         },
         "statcast": {
           "status": "HEALTHY",
-          "latency": 127,
+          "latency": 860,
           "httpCode": 200,
           "label": "Statcast",
-          "checkedAt": "2026-03-10T22:55:51.107Z"
+          "checkedAt": "2026-03-10T23:32:36.065Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 63,
+          "latency": 133,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-03-10T22:55:51.172Z"
+          "checkedAt": "2026-03-10T23:32:36.198Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 67,
+          "latency": 61,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-03-10T22:55:51.240Z"
+          "checkedAt": "2026-03-10T23:32:36.260Z"
         }
       },
-      "scannedAt": "2026-03-10T22:55:51.240Z"
+      "scannedAt": "2026-03-10T23:32:36.260Z"
     },
     "dont-jinx-it": {
       "id": "dont-jinx-it",
@@ -53,31 +53,31 @@
           "latency": 5,
           "httpCode": 200,
           "label": "MLB Live Feed",
-          "checkedAt": "2026-03-10T22:55:51.245Z"
+          "checkedAt": "2026-03-10T23:32:36.265Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 30,
+          "latency": 29,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-03-10T22:55:51.275Z"
+          "checkedAt": "2026-03-10T23:32:36.294Z"
         },
         "gcp_pubsub": {
           "status": "HEALTHY",
-          "latency": 170,
+          "latency": 153,
           "httpCode": 403,
           "label": "GCP Pub/Sub",
-          "checkedAt": "2026-03-10T22:55:51.446Z"
+          "checkedAt": "2026-03-10T23:32:36.447Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 106,
+          "latency": 97,
           "httpCode": 403,
           "label": "GCP Function",
-          "checkedAt": "2026-03-10T22:55:51.552Z"
+          "checkedAt": "2026-03-10T23:32:36.546Z"
         }
       },
-      "scannedAt": "2026-03-10T22:55:51.552Z"
+      "scannedAt": "2026-03-10T23:32:36.546Z"
     },
     "4040-tracker": {
       "id": "4040-tracker",
@@ -89,34 +89,34 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 13,
+          "latency": 4,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-03-10T22:55:51.565Z"
+          "checkedAt": "2026-03-10T23:32:36.550Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 24,
+          "latency": 27,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-03-10T22:55:51.589Z"
+          "checkedAt": "2026-03-10T23:32:36.578Z"
         },
         "gcp_scheduler": {
           "status": "HEALTHY",
-          "latency": 1708,
+          "latency": 1335,
           "httpCode": 200,
           "label": "Cloud Scheduler",
-          "checkedAt": "2026-03-10T22:55:53.298Z"
+          "checkedAt": "2026-03-10T23:32:37.913Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 37,
+          "latency": 36,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-03-10T22:55:53.335Z"
+          "checkedAt": "2026-03-10T23:32:37.950Z"
         }
       },
-      "scannedAt": "2026-03-10T22:55:53.335Z"
+      "scannedAt": "2026-03-10T23:32:37.950Z"
     }
   }
 }
