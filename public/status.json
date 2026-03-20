@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-20T11:18:15.505Z",
+  "generatedAt": "2026-03-20T11:49:01.072Z",
   "bots": {
     "acuna-hr": {
       "id": "acuna-hr",
@@ -11,34 +11,34 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 189,
+          "latency": 137,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-03-20T11:18:10.244Z"
+          "checkedAt": "2026-03-20T11:48:55.601Z"
         },
         "statcast": {
           "status": "HEALTHY",
-          "latency": 585,
+          "latency": 1109,
           "httpCode": 200,
           "label": "Statcast",
-          "checkedAt": "2026-03-20T11:18:10.831Z"
+          "checkedAt": "2026-03-20T11:48:56.710Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 46,
+          "latency": 79,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-03-20T11:18:10.878Z"
+          "checkedAt": "2026-03-20T11:48:56.790Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 3148,
+          "latency": 3104,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-03-20T11:18:14.027Z"
+          "checkedAt": "2026-03-20T11:48:59.894Z"
         }
       },
-      "scannedAt": "2026-03-20T11:18:14.027Z"
+      "scannedAt": "2026-03-20T11:48:59.894Z"
     },
     "dont-jinx-it": {
       "id": "dont-jinx-it",
@@ -50,34 +50,34 @@
       "checks": {
         "mlb_live": {
           "status": "HEALTHY",
-          "latency": 89,
+          "latency": 46,
           "httpCode": 200,
           "label": "MLB Live Feed",
-          "checkedAt": "2026-03-20T11:18:14.116Z"
+          "checkedAt": "2026-03-20T11:48:59.940Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 27,
+          "latency": 35,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-03-20T11:18:14.144Z"
+          "checkedAt": "2026-03-20T11:48:59.976Z"
         },
         "gcp_pubsub": {
           "status": "HEALTHY",
-          "latency": 231,
+          "latency": 182,
           "httpCode": 403,
           "label": "GCP Pub/Sub",
-          "checkedAt": "2026-03-20T11:18:14.376Z"
+          "checkedAt": "2026-03-20T11:49:00.158Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 204,
+          "latency": 104,
           "httpCode": 403,
           "label": "GCP Function",
-          "checkedAt": "2026-03-20T11:18:14.581Z"
+          "checkedAt": "2026-03-20T11:49:00.262Z"
         }
       },
-      "scannedAt": "2026-03-20T11:18:14.581Z"
+      "scannedAt": "2026-03-20T11:49:00.263Z"
     },
     "4040-tracker": {
       "id": "4040-tracker",
@@ -92,31 +92,31 @@
           "latency": 2,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-03-20T11:18:14.583Z"
+          "checkedAt": "2026-03-20T11:49:00.265Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 26,
+          "latency": 38,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-03-20T11:18:14.609Z"
+          "checkedAt": "2026-03-20T11:49:00.303Z"
         },
         "gcp_scheduler": {
           "status": "HEALTHY",
-          "latency": 845,
+          "latency": 745,
           "httpCode": 200,
           "label": "Cloud Scheduler",
-          "checkedAt": "2026-03-20T11:18:15.455Z"
+          "checkedAt": "2026-03-20T11:49:01.048Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 49,
+          "latency": 23,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-03-20T11:18:15.505Z"
+          "checkedAt": "2026-03-20T11:49:01.071Z"
         }
       },
-      "scannedAt": "2026-03-20T11:18:15.505Z"
+      "scannedAt": "2026-03-20T11:49:01.072Z"
     }
   }
 }
