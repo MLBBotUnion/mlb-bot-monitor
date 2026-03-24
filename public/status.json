@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-24T21:36:52.050Z",
+  "generatedAt": "2026-03-24T22:04:43.773Z",
   "bots": {
     "acuna-hr": {
       "id": "acuna-hr",
@@ -11,34 +11,34 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 205,
+          "latency": 183,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-03-24T21:36:48.208Z"
+          "checkedAt": "2026-03-24T22:04:41.422Z"
         },
         "statcast": {
           "status": "HEALTHY",
-          "latency": 139,
+          "latency": 506,
           "httpCode": 200,
           "label": "Statcast",
-          "checkedAt": "2026-03-24T21:36:48.347Z"
+          "checkedAt": "2026-03-24T22:04:41.928Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 114,
+          "latency": 111,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-03-24T21:36:48.461Z"
+          "checkedAt": "2026-03-24T22:04:42.039Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 107,
+          "latency": 86,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-03-24T21:36:48.568Z"
+          "checkedAt": "2026-03-24T22:04:42.125Z"
         }
       },
-      "scannedAt": "2026-03-24T21:36:48.569Z"
+      "scannedAt": "2026-03-24T22:04:42.125Z"
     },
     "dont-jinx-it": {
       "id": "dont-jinx-it",
@@ -50,34 +50,34 @@
       "checks": {
         "mlb_live": {
           "status": "HEALTHY",
-          "latency": 79,
+          "latency": 59,
           "httpCode": 200,
           "label": "MLB Live Feed",
-          "checkedAt": "2026-03-24T21:36:48.648Z"
+          "checkedAt": "2026-03-24T22:04:42.184Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 43,
+          "latency": 37,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-03-24T21:36:48.692Z"
+          "checkedAt": "2026-03-24T22:04:42.221Z"
         },
         "gcp_pubsub": {
           "status": "HEALTHY",
-          "latency": 173,
+          "latency": 243,
           "httpCode": 403,
           "label": "GCP Pub/Sub",
-          "checkedAt": "2026-03-24T21:36:48.865Z"
+          "checkedAt": "2026-03-24T22:04:42.466Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 193,
+          "latency": 103,
           "httpCode": 403,
           "label": "GCP Function",
-          "checkedAt": "2026-03-24T21:36:49.059Z"
+          "checkedAt": "2026-03-24T22:04:42.569Z"
         }
       },
-      "scannedAt": "2026-03-24T21:36:49.059Z"
+      "scannedAt": "2026-03-24T22:04:42.569Z"
     },
     "4040-tracker": {
       "id": "4040-tracker",
@@ -89,34 +89,34 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 16,
+          "latency": 47,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-03-24T21:36:49.075Z"
+          "checkedAt": "2026-03-24T22:04:42.616Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
           "latency": 41,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-03-24T21:36:49.117Z"
+          "checkedAt": "2026-03-24T22:04:42.657Z"
         },
         "gcp_scheduler": {
           "status": "HEALTHY",
-          "latency": 2890,
+          "latency": 1054,
           "httpCode": 200,
           "label": "Cloud Scheduler",
-          "checkedAt": "2026-03-24T21:36:52.008Z"
+          "checkedAt": "2026-03-24T22:04:43.711Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 42,
+          "latency": 61,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-03-24T21:36:52.050Z"
+          "checkedAt": "2026-03-24T22:04:43.772Z"
         }
       },
-      "scannedAt": "2026-03-24T21:36:52.050Z"
+      "scannedAt": "2026-03-24T22:04:43.773Z"
     }
   }
 }
