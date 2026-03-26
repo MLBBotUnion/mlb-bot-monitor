@@ -193,17 +193,12 @@ function TwitterStatsPanel({ twitter }) {
       border:'1px solid #0d1a2a',
       padding:'13px 14px', marginBottom:10,
     }}>
-      {/* Top row: handle + metrics */}
       <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom: tweetText ? 10 : 0 }}>
         <div style={{ display:'flex', alignItems:'center', gap:8 }}>
           <span style={{ fontSize:13 }}>🐦</span>
-          
-            href={`https://twitter.com/${twitter.handle}`}
-            target="_blank" rel="noreferrer"
-            style={{ color: c, fontSize:12, fontFamily:"'IBM Plex Mono',monospace", textDecoration:'none' }}
-          >
+          <span style={{ color: c, fontSize:12, fontFamily:"'IBM Plex Mono',monospace" }}>
             @{twitter.handle}
-          </a>
+          </span>
         </div>
         <div style={{ display:'flex', gap:20 }}>
           {[
@@ -221,21 +216,17 @@ function TwitterStatsPanel({ twitter }) {
         </div>
       </div>
 
-      {/* Last tweet preview */}
       {tweetText && (
         <div style={{
           borderTop:'1px solid #0d1120', paddingTop:9,
           display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:12,
         }}>
-          
-            href={lastTweet.url} target="_blank" rel="noreferrer"
-            style={{
-              color:'#555', fontSize:11, fontFamily:"'IBM Plex Mono',monospace",
-              lineHeight:1.5, textDecoration:'none', flex:1,
-            }}
-          >
+          <span style={{
+            color:'#555', fontSize:11, fontFamily:"'IBM Plex Mono',monospace",
+            lineHeight:1.5, flex:1,
+          }}>
             {tweetText}
-          </a>
+          </span>
           <div style={{ display:'flex', gap:12, flexShrink:0, paddingTop:2 }}>
             {[
               ['♥', lastTweet.likes],
