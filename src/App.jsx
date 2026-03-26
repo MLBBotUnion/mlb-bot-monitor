@@ -160,7 +160,97 @@ ACTION: <specific fix command or GCP console path, or "No action needed">`,
     </div>
   )
 }
+function TwitterStatsPanel({ twitter }) {
+  if (!twitter) return null
+  const c = '#1d9bf0' // Twitter blue
 
+  if (twitter.error) {
+    return (
+      <div style={{
+        background:'#08080f', borderRadius:8, border:'1px solid #111120',
+        padding:'12px 14px', marginBottom:10,
+        display:'flex', alignItems:'center', gap:9,
+      }}>
+        <span style={{ fontSize:13 }}>🐦</span>
+        <span style={{ color:'#333', fontSize:11, fontFamily:"'IBM Plex Mono',monospace" }}>
+          @{twitter.handle} · {twitter.error}
+        </span>
+      </div>
+    )
+  }
+
+  const lastTweet = twitter.lastTweet
+  const tweetAge  = lastTweet ? timeAgo(lastTweet.createdAt) : '—'
+  const tweetText = lastTweet?.text
+    ? lastTweet.text.length > 80
+      ? lastTweet.text.slice(0, 80) + '…'
+      : lastTweet.text
+    : null
+
+  return (
+    <div style={{
+      background:'#08080f', borderRadius:8,
+      border:'1px solid #0d1a2a',
+      padding:'13px 14px', marginBottom:10,
+    }}>
+      {/* Top row: handle + metrics */}
+      <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom: tweetText ? 10 : 0 }}>
+        <div style={{ display:'flex', alignItems:'center', gap:8 }}>
+          <span style={{ fontSize:13 }}>🐦</span>
+          
+            href={`https://twitter.com/${twitter.handle}`}
+            target="_blank" rel="noreferrer"
+            style={{ color: c, fontSize:12, fontFamily:"'IBM Plex Mono',monospace", textDecoration:'none' }}
+          >
+            @{twitter.handle}
+          </a>
+        </div>
+        <div style={{ display:'flex', gap:20 }}>
+          {[
+            ['FOLLOWERS', twitter.followers?.toLocaleString() ?? '—'],
+            ['TWEETS',    twitter.tweetCount?.toLocaleString() ?? '—'],
+            ['LAST POST', tweetAge],
+          ].map(([label, val]) => (
+            <div key={label} style={{ textAlign:'center' }}>
+              <div style={{ color:'#eee', fontSize:13, fontFamily:"'IBM Plex Mono',monospace", fontWeight:700 }}>
+                {val}
+              </div>
+              <div style={{ color:'#333', fontSize:9, letterSpacing:1 }}>{label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Last tweet preview */}
+      {tweetText && (
+        <div style={{
+          borderTop:'1px solid #0d1120', paddingTop:9,
+          display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:12,
+        }}>
+          
+            href={lastTweet.url} target="_blank" rel="noreferrer"
+            style={{
+              color:'#555', fontSize:11, fontFamily:"'IBM Plex Mono',monospace",
+              lineHeight:1.5, textDecoration:'none', flex:1,
+            }}
+          >
+            {tweetText}
+          </a>
+          <div style={{ display:'flex', gap:12, flexShrink:0, paddingTop:2 }}>
+            {[
+              ['♥', lastTweet.likes],
+              ['↺', lastTweet.retweets],
+            ].map(([icon, count]) => (
+              <span key={icon} style={{ color:'#2a2a3a', fontSize:11, fontFamily:"'IBM Plex Mono',monospace" }}>
+                {icon} {count}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
 function BotCard({ bot }) {
   const [open, setOpen] = useState(false)
   const c = STATUS_COLOR[bot.overall] || STATUS_COLOR.UNKNOWN
