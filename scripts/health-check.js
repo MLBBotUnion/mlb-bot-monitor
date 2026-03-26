@@ -12,13 +12,14 @@ const path  = require('path');
 // ─── Bot definitions ──────────────────────────────────────────────────────────
 const BOTS = [
   {
-    id:           'acuna-hr',
-    name:         'Acuña HR Bot',
-    emoji:        '💥',
-    description:  'Tweets every Ronald Acuña home run with Statcast GIF',
-    gcpService:   'Cloud Run',
+    id:            'acuna-hr',
+    name:          'Acuña HR Bot',
+    emoji:         '💥',
+    description:   'Tweets every Ronald Acuña home run with Statcast GIF',
+    gcpService:    'Cloud Run',
     twitterHandle: 'acuna4040',
-    healthUrl:    process.env.ACUNA_BOT_HEALTH_URL,
+    bearerToken:   process.env.ACUNA_BEARER_TOKEN,
+    healthUrl:     process.env.ACUNA_BOT_HEALTH_URL,
     checks: [
       { id: 'mlb_api',      label: 'MLB Stats API',  url: 'https://statsapi.mlb.com/api/v1/sports' },
       { id: 'statcast',     label: 'Statcast',        url: 'https://baseballsavant.mlb.com' },
@@ -27,13 +28,14 @@ const BOTS = [
     ],
   },
   {
-    id:           'dont-jinx-it',
-    name:         "Don't Jinx It Bot",
-    emoji:        '🤫',
-    description:  'Tracks perfect games, no-hitters & rare MLB events',
-    gcpService:   'Cloud Functions + Pub/Sub',
+    id:            'dont-jinx-it',
+    name:          "Don't Jinx It Bot",
+    emoji:         '🤫',
+    description:   'Tracks perfect games, no-hitters & rare MLB events',
+    gcpService:    'Cloud Functions + Pub/Sub',
     twitterHandle: 'dontjinxitmlb',
-    healthUrl:    process.env.DONTJINX_BOT_HEALTH_URL,
+    bearerToken:   process.env.DONTJINX_BEARER_TOKEN,
+    healthUrl:     process.env.DONTJINX_BOT_HEALTH_URL,
     checks: [
       { id: 'mlb_live',     label: 'MLB Live Feed',   url: 'https://statsapi.mlb.com/api/v1/schedule?sportId=1' },
       { id: 'twitter_api',  label: 'X / Twitter API', url: 'https://api.twitter.com/2/tweets' },
@@ -42,13 +44,14 @@ const BOTS = [
     ],
   },
   {
-    id:           '4040-tracker',
-    name:         '40-40 Tracker Bot',
-    emoji:        '⚡',
-    description:  'Monitors MLB players chasing 40 HR / 40 SB milestone',
-    gcpService:   'Cloud Scheduler + Cloud Run',
+    id:            '4040-tracker',
+    name:          '40-40 Tracker Bot',
+    emoji:         '⚡',
+    description:   'Monitors MLB players chasing 40 HR / 40 SB milestone',
+    gcpService:    'Cloud Scheduler + Cloud Run',
     twitterHandle: '4040tracker',
-    healthUrl:    process.env.TRACKER_BOT_HEALTH_URL,
+    bearerToken:   process.env.TRACKER_BEARER_TOKEN,
+    healthUrl:     process.env.TRACKER_BOT_HEALTH_URL,
     checks: [
       { id: 'mlb_api',       label: 'MLB Stats API',  url: 'https://statsapi.mlb.com/api/v1/sports' },
       { id: 'twitter_api',   label: 'X / Twitter API', url: 'https://api.twitter.com/2/tweets' },
@@ -78,22 +81,16 @@ function ping(url, timeoutMs = 8000) {
 }
 
 // ─── Twitter stats helper ─────────────────────────────────────────────────────
-function fetchTwitterStats(handle) {
+function fetchTwitterStats(handle, bearerToken) {
   return new Promise((resolve) => {
-    const bearerToken = process.env.TWITTER_BEARER_TOKEN;
     if (!bearerToken) {
-      resolve({ error: 'TWITTER_BEARER_TOKEN not set' });
+      resolve({ error: 'Bearer token not configured' });
       return;
     }
 
-    const url = `https://api.twitter.com/2/users/by/username/${handle}` +
-      `?user.fields=public_metrics,created_at` +
-      `&expansions=pinned_tweet_id` +
-      `&tweet.fields=created_at,text`;
-
     const options = {
       hostname: 'api.twitter.com',
-      path:     `/2/users/by/username/${handle}?user.fields=public_metrics,created_at`,
+      path:     `/2/users/by/username/${handle}?user.fields=public_metrics`,
       method:   'GET',
       headers:  { Authorization: `Bearer ${bearerToken}` },
       timeout:  8000,
@@ -111,10 +108,9 @@ function fetchTwitterStats(handle) {
           }
           const m = json.data.public_metrics;
           resolve({
-            followers:   m.followers_count,
-            following:   m.following_count,
-            tweetCount:  m.tweet_count,
-            listedCount: m.listed_count,
+            followers:  m.followers_count,
+            following:  m.following_count,
+            tweetCount: m.tweet_count,
           });
         } catch (e) {
           resolve({ error: `Parse error: ${e.message}` });
@@ -129,12 +125,11 @@ function fetchTwitterStats(handle) {
 }
 
 // ─── Fetch last tweet ─────────────────────────────────────────────────────────
-function fetchLastTweet(handle) {
+function fetchLastTweet(handle, bearerToken) {
   return new Promise((resolve) => {
-    const bearerToken = process.env.TWITTER_BEARER_TOKEN;
     if (!bearerToken) { resolve(null); return; }
 
-    // First we need the user ID, then fetch their timeline
+    // Step 1: get user ID
     const idOptions = {
       hostname: 'api.twitter.com',
       path:     `/2/users/by/username/${handle}?user.fields=id`,
@@ -152,7 +147,7 @@ function fetchLastTweet(handle) {
           const userId = json.data?.id;
           if (!userId) { resolve(null); return; }
 
-          // Now fetch their most recent tweet
+          // Step 2: get most recent tweet
           const tweetOptions = {
             hostname: 'api.twitter.com',
             path:     `/2/users/${userId}/tweets?max_results=5&tweet.fields=created_at,text,public_metrics&exclude=retweets,replies`,
@@ -170,13 +165,13 @@ function fetchLastTweet(handle) {
                 const tweet = tJson.data?.[0];
                 if (!tweet) { resolve(null); return; }
                 resolve({
-                  id:         tweet.id,
-                  text:       tweet.text,
-                  createdAt:  tweet.created_at,
-                  likes:      tweet.public_metrics?.like_count    ?? 0,
-                  retweets:   tweet.public_metrics?.retweet_count ?? 0,
-                  replies:    tweet.public_metrics?.reply_count   ?? 0,
-                  url:        `https://twitter.com/${handle}/status/${tweet.id}`,
+                  id:        tweet.id,
+                  text:      tweet.text,
+                  createdAt: tweet.created_at,
+                  likes:     tweet.public_metrics?.like_count    ?? 0,
+                  retweets:  tweet.public_metrics?.retweet_count ?? 0,
+                  replies:   tweet.public_metrics?.reply_count   ?? 0,
+                  url:       `https://twitter.com/${handle}/status/${tweet.id}`,
                 });
               } catch (e) { resolve(null); }
             });
@@ -213,13 +208,13 @@ async function main() {
       console.log(`  ${icon} ${check.label}: ${result.status} ${result.latency ? `(${result.latency}ms)` : ''}`);
     }
 
-    // Twitter stats
+    // Twitter stats — each bot uses its own bearer token
     let twitter = null;
-    if (bot.twitterHandle) {
+    if (bot.twitterHandle && bot.bearerToken) {
       console.log(`  🐦 Fetching Twitter stats for @${bot.twitterHandle}…`);
       const [stats, lastTweet] = await Promise.all([
-        fetchTwitterStats(bot.twitterHandle),
-        fetchLastTweet(bot.twitterHandle),
+        fetchTwitterStats(bot.twitterHandle, bot.bearerToken),
+        fetchLastTweet(bot.twitterHandle, bot.bearerToken),
       ]);
       twitter = { handle: bot.twitterHandle, ...stats, lastTweet };
       if (stats.error) {
@@ -227,6 +222,9 @@ async function main() {
       } else {
         console.log(`  ✅ Followers: ${stats.followers?.toLocaleString()} | Tweets: ${stats.tweetCount?.toLocaleString()}`);
       }
+    } else {
+      console.log(`  ⚠️  Skipping Twitter stats — bearer token not configured`);
+      twitter = { handle: bot.twitterHandle, error: 'Bearer token not configured' };
     }
 
     const statuses = Object.values(checkResults).map(c => c.status);
