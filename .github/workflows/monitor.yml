@@ -27,7 +27,9 @@ jobs:
           ACUNA_BOT_HEALTH_URL:    ${{ secrets.ACUNA_BOT_HEALTH_URL }}
           DONTJINX_BOT_HEALTH_URL: ${{ secrets.DONTJINX_BOT_HEALTH_URL }}
           TRACKER_BOT_HEALTH_URL:  ${{ secrets.TRACKER_BOT_HEALTH_URL }}
-          TWITTER_BEARER_TOKEN:    ${{ secrets.TWITTER_BEARER_TOKEN }}
+          ACUNA_BEARER_TOKEN:      ${{ secrets.ACUNA_BEARER_TOKEN }}
+          DONTJINX_BEARER_TOKEN:   ${{ secrets.DONTJINX_BEARER_TOKEN }}
+          TRACKER_BEARER_TOKEN:    ${{ secrets.TRACKER_BEARER_TOKEN }}
         run: node scripts/health-check.js
 
       - name: Commit updated status.json
