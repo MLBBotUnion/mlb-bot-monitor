@@ -14,7 +14,6 @@ const STATUS_BG = {
   UNKNOWN: 'rgba(100,100,120,0.05)',
 }
 
-// Bot metadata not stored in status.json
 const BOT_META = {
   'acuna-hr':     { checks: ['mlb_api','statcast','twitter_api','gcp_function'] },
   'dont-jinx-it': { checks: ['mlb_live','twitter_api','gcp_pubsub','gcp_function'] },
@@ -88,9 +87,9 @@ function CheckRow({ id, data }) {
 }
 
 function AIDiagnosis({ bot, checkData }) {
-  const [text, setText]         = useState('')
-  const [loading, setLoading]   = useState(false)
-  const [ran, setRan]           = useState(false)
+  const [text, setText]       = useState('')
+  const [loading, setLoading] = useState(false)
+  const [ran, setRan]         = useState(false)
 
   const run = async () => {
     setLoading(true); setText(''); setRan(true)
@@ -160,9 +159,10 @@ ACTION: <specific fix command or GCP console path, or "No action needed">`,
     </div>
   )
 }
+
 function TwitterStatsPanel({ twitter }) {
   if (!twitter) return null
-  const c = '#1d9bf0' // Twitter blue
+  const c = '#1d9bf0'
 
   if (twitter.error) {
     return (
@@ -251,6 +251,7 @@ function TwitterStatsPanel({ twitter }) {
     </div>
   )
 }
+
 function BotCard({ bot }) {
   const [open, setOpen] = useState(false)
   const c = STATUS_COLOR[bot.overall] || STATUS_COLOR.UNKNOWN
@@ -308,6 +309,7 @@ function BotCard({ bot }) {
       {/* Body */}
       {open && (
         <div style={{ padding:'15px 20px 20px', animation:'fadeIn 0.2s ease' }}>
+          <TwitterStatsPanel twitter={bot.twitter} />
           <div style={{
             fontSize:9, color:'#333', letterSpacing:2,
             fontFamily:"'IBM Plex Mono',monospace", marginBottom:9, textTransform:'uppercase',
@@ -333,7 +335,6 @@ export default function App() {
 
   const fetchStatus = useCallback(async () => {
     try {
-      // Cache-bust so GitHub Pages doesn't serve stale status.json
       const res = await fetch(`/mlb-bot-monitor/status.json?t=${Date.now()}`)
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const data = await res.json()
@@ -347,7 +348,6 @@ export default function App() {
     }
   }, [])
 
-  // Fetch on mount, then every 60 seconds
   useEffect(() => {
     fetchStatus()
     const interval = setInterval(fetchStatus, 60000)
@@ -393,7 +393,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Counts */}
           <div style={{ display:'flex', gap:24, paddingBottom:4 }}>
             {[
               ['HEALTHY', healthy, STATUS_COLOR.HEALTHY],
