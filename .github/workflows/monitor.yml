@@ -24,9 +24,10 @@ jobs:
 
       - name: Run health checks
         env:
-          ACUNA_BOT_HEALTH_URL: ${{ secrets.ACUNA_BOT_HEALTH_URL }}
+          ACUNA_BOT_HEALTH_URL:    ${{ secrets.ACUNA_BOT_HEALTH_URL }}
           DONTJINX_BOT_HEALTH_URL: ${{ secrets.DONTJINX_BOT_HEALTH_URL }}
-          TRACKER_BOT_HEALTH_URL: ${{ secrets.TRACKER_BOT_HEALTH_URL }}
+          TRACKER_BOT_HEALTH_URL:  ${{ secrets.TRACKER_BOT_HEALTH_URL }}
+          TWITTER_BEARER_TOKEN:    ${{ secrets.TWITTER_BEARER_TOKEN }}
         run: node scripts/health-check.js
 
       - name: Commit updated status.json
