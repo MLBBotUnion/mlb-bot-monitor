@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-04T08:04:18.373Z",
+  "generatedAt": "2026-04-04T08:56:57.558Z",
   "bots": {
     "acuna-hr": {
       "id": "acuna-hr",
@@ -11,31 +11,31 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 264,
+          "latency": 84,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-04-04T08:04:12.940Z"
+          "checkedAt": "2026-04-04T08:56:52.267Z"
         },
         "statcast": {
           "status": "HEALTHY",
-          "latency": 229,
+          "latency": 100,
           "httpCode": 200,
           "label": "Statcast",
-          "checkedAt": "2026-04-04T08:04:13.169Z"
+          "checkedAt": "2026-04-04T08:56:52.367Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 53,
+          "latency": 28,
           "httpCode": 403,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-04T08:04:13.223Z"
+          "checkedAt": "2026-04-04T08:56:52.395Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 1895,
+          "latency": 1936,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-04-04T08:04:15.118Z"
+          "checkedAt": "2026-04-04T08:56:54.333Z"
         }
       },
       "twitter": {
@@ -43,7 +43,7 @@
         "error": "Parse error: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
         "lastTweet": null
       },
-      "scannedAt": "2026-04-04T08:04:15.146Z"
+      "scannedAt": "2026-04-04T08:56:54.368Z"
     },
     "dont-jinx-it": {
       "id": "dont-jinx-it",
@@ -55,31 +55,31 @@
       "checks": {
         "mlb_live": {
           "status": "HEALTHY",
-          "latency": 6,
+          "latency": 4,
           "httpCode": 200,
           "label": "MLB Live Feed",
-          "checkedAt": "2026-04-04T08:04:15.153Z"
+          "checkedAt": "2026-04-04T08:56:54.372Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 43,
+          "latency": 13,
           "httpCode": 403,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-04T08:04:15.196Z"
+          "checkedAt": "2026-04-04T08:56:54.385Z"
         },
         "gcp_pubsub": {
           "status": "HEALTHY",
-          "latency": 153,
+          "latency": 159,
           "httpCode": 403,
           "label": "GCP Pub/Sub",
-          "checkedAt": "2026-04-04T08:04:15.349Z"
+          "checkedAt": "2026-04-04T08:56:54.544Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 103,
+          "latency": 101,
           "httpCode": 403,
           "label": "GCP Function",
-          "checkedAt": "2026-04-04T08:04:15.452Z"
+          "checkedAt": "2026-04-04T08:56:54.645Z"
         }
       },
       "twitter": {
@@ -87,7 +87,7 @@
         "error": "Parse error: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
         "lastTweet": null
       },
-      "scannedAt": "2026-04-04T08:04:15.489Z"
+      "scannedAt": "2026-04-04T08:56:54.667Z"
     },
     "4040-tracker": {
       "id": "4040-tracker",
@@ -99,31 +99,31 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 6,
+          "latency": 3,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-04-04T08:04:15.495Z"
+          "checkedAt": "2026-04-04T08:56:54.670Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 32,
+          "latency": 14,
           "httpCode": 403,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-04T08:04:15.528Z"
+          "checkedAt": "2026-04-04T08:56:54.684Z"
         },
         "gcp_scheduler": {
           "status": "HEALTHY",
-          "latency": 2759,
+          "latency": 2815,
           "httpCode": 200,
           "label": "Cloud Scheduler",
-          "checkedAt": "2026-04-04T08:04:18.287Z"
+          "checkedAt": "2026-04-04T08:56:57.499Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 43,
+          "latency": 36,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-04-04T08:04:18.331Z"
+          "checkedAt": "2026-04-04T08:56:57.536Z"
         }
       },
       "twitter": {
@@ -131,7 +131,7 @@
         "error": "Parse error: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
         "lastTweet": null
       },
-      "scannedAt": "2026-04-04T08:04:18.373Z"
+      "scannedAt": "2026-04-04T08:56:57.558Z"
     }
   }
 }
