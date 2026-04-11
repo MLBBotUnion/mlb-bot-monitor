@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-11T15:30:11.393Z",
+  "generatedAt": "2026-04-11T15:59:27.896Z",
   "bots": {
     "acuna-hr": {
       "id": "acuna-hr",
@@ -11,49 +11,39 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 209,
+          "latency": 143,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-04-11T15:30:06.656Z"
+          "checkedAt": "2026-04-11T15:59:24.101Z"
         },
         "statcast": {
           "status": "HEALTHY",
-          "latency": 177,
+          "latency": 329,
           "httpCode": 200,
           "label": "Statcast",
-          "checkedAt": "2026-04-11T15:30:06.834Z"
+          "checkedAt": "2026-04-11T15:59:24.430Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 109,
-          "httpCode": 401,
+          "latency": 47,
+          "httpCode": 403,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-11T15:30:06.943Z"
+          "checkedAt": "2026-04-11T15:59:24.478Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 1981,
+          "latency": 2198,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-04-11T15:30:08.924Z"
+          "checkedAt": "2026-04-11T15:59:26.678Z"
         }
       },
       "twitter": {
         "handle": "acuna4040",
-        "followers": 7,
-        "following": 15,
-        "tweetCount": 3,
-        "lastTweet": {
-          "id": "2030491992749129858",
-          "text": "🪓 Introducing the Acuña 40/40 Tracker Bot — because watching the most electric player in baseball deserves its own live dashboard.\n\nRonald Acuña Jr. hit 41 HR and 73 stolen bases in 2023. The only 40/70 season in MLB history. Can he do it again?\n\nDetails👇https://t.co/miLNArf3LU",
-          "createdAt": "2026-03-08T03:53:10.000Z",
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://twitter.com/acuna4040/status/2030491992749129858"
-        }
+        "error": "Parse error: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "lastTweet": null
       },
-      "scannedAt": "2026-04-11T15:30:09.247Z"
+      "scannedAt": "2026-04-11T15:59:26.706Z"
     },
     "dont-jinx-it": {
       "id": "dont-jinx-it",
@@ -65,49 +55,39 @@
       "checks": {
         "mlb_live": {
           "status": "HEALTHY",
-          "latency": 79,
+          "latency": 7,
           "httpCode": 200,
           "label": "MLB Live Feed",
-          "checkedAt": "2026-04-11T15:30:09.326Z"
+          "checkedAt": "2026-04-11T15:59:26.713Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 51,
-          "httpCode": 401,
+          "latency": 25,
+          "httpCode": 403,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-11T15:30:09.377Z"
+          "checkedAt": "2026-04-11T15:59:26.738Z"
         },
         "gcp_pubsub": {
           "status": "HEALTHY",
-          "latency": 193,
+          "latency": 104,
           "httpCode": 403,
           "label": "GCP Pub/Sub",
-          "checkedAt": "2026-04-11T15:30:09.571Z"
+          "checkedAt": "2026-04-11T15:59:26.843Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 203,
+          "latency": 104,
           "httpCode": 403,
           "label": "GCP Function",
-          "checkedAt": "2026-04-11T15:30:09.774Z"
+          "checkedAt": "2026-04-11T15:59:26.948Z"
         }
       },
       "twitter": {
         "handle": "dontjinxitmlb",
-        "followers": 0,
-        "following": 4,
-        "tweetCount": 2,
-        "lastTweet": {
-          "id": "2030827822470561850",
-          "text": "Learn more about the 12 rare MLB events that we track and how we do it 👇\n\nhttps://t.co/RCIKNpPz0O",
-          "createdAt": "2026-03-09T02:07:38.000Z",
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://twitter.com/dontjinxitmlb/status/2030827822470561850"
-        }
+        "error": "Parse error: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "lastTweet": null
       },
-      "scannedAt": "2026-04-11T15:30:10.023Z"
+      "scannedAt": "2026-04-11T15:59:26.988Z"
     },
     "4040-tracker": {
       "id": "4040-tracker",
@@ -119,49 +99,39 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 12,
+          "latency": 6,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-04-11T15:30:10.035Z"
+          "checkedAt": "2026-04-11T15:59:26.995Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 56,
-          "httpCode": 401,
+          "latency": 24,
+          "httpCode": 403,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-11T15:30:10.092Z"
+          "checkedAt": "2026-04-11T15:59:27.019Z"
         },
         "gcp_scheduler": {
           "status": "HEALTHY",
-          "latency": 1035,
+          "latency": 801,
           "httpCode": 200,
           "label": "Cloud Scheduler",
-          "checkedAt": "2026-04-11T15:30:11.128Z"
+          "checkedAt": "2026-04-11T15:59:27.820Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 52,
+          "latency": 48,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-04-11T15:30:11.180Z"
+          "checkedAt": "2026-04-11T15:59:27.868Z"
         }
       },
       "twitter": {
         "handle": "4040tracker",
-        "followers": 3,
-        "following": 2,
-        "tweetCount": 1,
-        "lastTweet": {
-          "id": "2030488561955352995",
-          "text": "⚾ Introducing @4040tracker — the only automated bot watching every MLB player with a shot at the rarest feat in baseball.\n\n40 HR + 40 SB in the same season. Only 6 players in history have done it.\n\nWe track every contender. Live. All season.\n\nDetails👇https://t.co/6ROnzAT9HX",
-          "createdAt": "2026-03-08T03:39:32.000Z",
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://twitter.com/4040tracker/status/2030488561955352995"
-        }
+        "error": "Parse error: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "lastTweet": null
       },
-      "scannedAt": "2026-04-11T15:30:11.393Z"
+      "scannedAt": "2026-04-11T15:59:27.896Z"
     }
   }
 }
