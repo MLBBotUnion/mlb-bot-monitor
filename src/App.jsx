@@ -160,6 +160,27 @@ ACTION: <specific fix command or GCP console path, or "No action needed">`,
   )
 }
 
+function DeltaBadge({ delta }) {
+  if (delta == null) return (
+    <span style={{ color:'#2a2a3a', fontSize:10, fontFamily:"'IBM Plex Mono',monospace" }}>
+      7d —
+    </span>
+  )
+  const up    = delta >= 0
+  const color = delta > 0 ? '#00ff88' : delta < 0 ? '#ff3b5c' : '#555566'
+  const arrow = delta > 0 ? '▲' : delta < 0 ? '▼' : '—'
+  return (
+    <span style={{
+      color, fontSize:10, fontFamily:"'IBM Plex Mono',monospace",
+      background: up ? 'rgba(0,255,136,0.07)' : 'rgba(255,59,92,0.07)',
+      border: `1px solid ${color}33`,
+      borderRadius:4, padding:'2px 6px',
+    }}>
+      {arrow} {delta > 0 ? '+' : ''}{delta} 7d
+    </span>
+  )
+}
+
 function TwitterStatsPanel({ twitter }) {
   if (!twitter) return null
   const c = '#1d9bf0'
@@ -200,7 +221,7 @@ function TwitterStatsPanel({ twitter }) {
             @{twitter.handle}
           </span>
         </div>
-        <div style={{ display:'flex', gap:20 }}>
+        <div style={{ display:'flex', alignItems:'center', gap:20 }}>
           {[
             ['FOLLOWERS', twitter.followers?.toLocaleString() ?? '—'],
             ['TWEETS',    twitter.tweetCount?.toLocaleString() ?? '—'],
@@ -213,6 +234,7 @@ function TwitterStatsPanel({ twitter }) {
               <div style={{ color:'#333', fontSize:9, letterSpacing:1 }}>{label}</div>
             </div>
           ))}
+          <DeltaBadge delta={twitter.followerDelta7d} />
         </div>
       </div>
 
