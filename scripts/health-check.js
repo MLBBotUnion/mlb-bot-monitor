@@ -87,7 +87,6 @@ function fetchTwitterStats(handle, bearerToken) {
       resolve({ error: 'Bearer token not configured' });
       return;
     }
-
     const options = {
       hostname: 'api.twitter.com',
       path:     `/2/users/by/username/${handle}?user.fields=public_metrics`,
@@ -95,7 +94,6 @@ function fetchTwitterStats(handle, bearerToken) {
       headers:  { Authorization: `Bearer ${bearerToken}` },
       timeout:  8000,
     };
-
     const req = https.request(options, (res) => {
       let body = '';
       res.on('data', chunk => body += chunk);
@@ -117,7 +115,6 @@ function fetchTwitterStats(handle, bearerToken) {
         }
       });
     });
-
     req.on('timeout', () => { req.destroy(); resolve({ error: 'Timeout' }); });
     req.on('error',   (e) => resolve({ error: e.message }));
     req.end();
@@ -128,8 +125,6 @@ function fetchTwitterStats(handle, bearerToken) {
 function fetchLastTweet(handle, bearerToken) {
   return new Promise((resolve) => {
     if (!bearerToken) { resolve(null); return; }
-
-    // Step 1: get user ID
     const idOptions = {
       hostname: 'api.twitter.com',
       path:     `/2/users/by/username/${handle}?user.fields=id`,
@@ -137,7 +132,6 @@ function fetchLastTweet(handle, bearerToken) {
       headers:  { Authorization: `Bearer ${bearerToken}` },
       timeout:  8000,
     };
-
     const idReq = https.request(idOptions, (res) => {
       let body = '';
       res.on('data', chunk => body += chunk);
@@ -146,8 +140,6 @@ function fetchLastTweet(handle, bearerToken) {
           const json = JSON.parse(body);
           const userId = json.data?.id;
           if (!userId) { resolve(null); return; }
-
-          // Step 2: get most recent tweet
           const tweetOptions = {
             hostname: 'api.twitter.com',
             path:     `/2/users/${userId}/tweets?max_results=5&tweet.fields=created_at,text,public_metrics&exclude=retweets,replies`,
@@ -155,7 +147,6 @@ function fetchLastTweet(handle, bearerToken) {
             headers:  { Authorization: `Bearer ${bearerToken}` },
             timeout:  8000,
           };
-
           const tweetReq = https.request(tweetOptions, (tRes) => {
             let tBody = '';
             tRes.on('data', chunk => tBody += chunk);
@@ -178,7 +169,6 @@ function fetchLastTweet(handle, bearerToken) {
           });
           tweetReq.on('error', () => resolve(null));
           tweetReq.end();
-
         } catch (e) { resolve(null); }
       });
     });
@@ -187,11 +177,83 @@ function fetchLastTweet(handle, bearerToken) {
   });
 }
 
+// ─── Follower history helpers ─────────────────────────────────────────────────
+const HISTORY_PATH = path.join(__dirname, '..', 'public', 'twitter-history.json');
+const MAX_DAYS     = 10; // keep 10 days of snapshots
+
+function loadHistory() {
+  try {
+    if (fs.existsSync(HISTORY_PATH)) {
+      return JSON.parse(fs.readFileSync(HISTORY_PATH, 'utf8'));
+    }
+  } catch (e) {
+    console.log('  ⚠️  Could not read twitter-history.json, starting fresh');
+  }
+  return { snapshots: [] };
+}
+
+function saveHistory(history) {
+  fs.writeFileSync(HISTORY_PATH, JSON.stringify(history, null, 2));
+}
+
+function updateHistory(history, botFollowers) {
+  const todayStr = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+
+  // Check if we already have a snapshot for today
+  const existingToday = history.snapshots.find(s => s.date === todayStr);
+  if (existingToday) {
+    // Update today's snapshot with latest counts
+    existingToday.followers = botFollowers;
+    console.log(`  📅 Updated today's snapshot (${todayStr})`);
+  } else {
+    // Add new daily snapshot
+    history.snapshots.push({ date: todayStr, followers: botFollowers });
+    console.log(`  📅 Added new daily snapshot (${todayStr})`);
+  }
+
+  // Trim to MAX_DAYS
+  history.snapshots.sort((a, b) => a.date.localeCompare(b.date));
+  if (history.snapshots.length > MAX_DAYS) {
+    history.snapshots = history.snapshots.slice(-MAX_DAYS);
+  }
+
+  return history;
+}
+
+function get7DayDelta(history, botId) {
+  const snapshots = history.snapshots;
+  if (snapshots.length < 2) return null;
+
+  const today     = snapshots[snapshots.length - 1];
+  const todayVal  = today.followers?.[botId];
+  if (todayVal == null) return null;
+
+  // Find snapshot closest to 7 days ago
+  const todayDate   = new Date(today.date);
+  const targetDate  = new Date(todayDate);
+  targetDate.setDate(targetDate.getDate() - 7);
+
+  // Find the snapshot nearest to 7 days ago
+  let best = null;
+  let bestDiff = Infinity;
+  for (const snap of snapshots.slice(0, -1)) {
+    const diff = Math.abs(new Date(snap.date) - targetDate);
+    if (diff < bestDiff && snap.followers?.[botId] != null) {
+      bestDiff = diff;
+      best = snap;
+    }
+  }
+
+  if (!best) return null;
+  return todayVal - best.followers[botId];
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 async function main() {
   console.log(`\n⚾ MLB Bot Monitor — ${new Date().toISOString()}\n`);
 
-  const results = {};
+  const results      = {};
+  const botFollowers = {}; // { botId: followerCount } for history snapshot
 
   for (const bot of BOTS) {
     console.log(`Checking ${bot.name}…`);
@@ -208,7 +270,7 @@ async function main() {
       console.log(`  ${icon} ${check.label}: ${result.status} ${result.latency ? `(${result.latency}ms)` : ''}`);
     }
 
-    // Twitter stats — each bot uses its own bearer token
+    // Twitter stats
     let twitter = null;
     if (bot.twitterHandle && bot.bearerToken) {
       console.log(`  🐦 Fetching Twitter stats for @${bot.twitterHandle}…`);
@@ -221,6 +283,7 @@ async function main() {
         console.log(`  ⚠️  Twitter stats error: ${stats.error}`);
       } else {
         console.log(`  ✅ Followers: ${stats.followers?.toLocaleString()} | Tweets: ${stats.tweetCount?.toLocaleString()}`);
+        botFollowers[bot.id] = stats.followers;
       }
     } else {
       console.log(`  ⚠️  Skipping Twitter stats — bearer token not configured`);
@@ -245,10 +308,28 @@ async function main() {
     };
   }
 
+  // ─── Update follower history ───────────────────────────────────────────────
+  console.log('\n📊 Updating follower history…');
+  const history = loadHistory();
+  updateHistory(history, botFollowers);
+
+  // Attach 7-day delta to each bot's twitter data
+  for (const bot of BOTS) {
+    const delta = get7DayDelta(history, bot.id);
+    if (results[bot.id]?.twitter && delta !== null) {
+      results[bot.id].twitter.followerDelta7d = delta;
+      console.log(`  📈 ${bot.name} 7d delta: ${delta >= 0 ? '+' : ''}${delta}`);
+    }
+  }
+
+  saveHistory(history);
+  console.log('✅ twitter-history.json updated');
+
+  // ─── Write status.json ────────────────────────────────────────────────────
   const output = { generatedAt: new Date().toISOString(), bots: results };
   const outPath = path.join(__dirname, '..', 'public', 'status.json');
   fs.writeFileSync(outPath, JSON.stringify(output, null, 2));
-  console.log(`\n✅ status.json written to ${outPath}`);
+  console.log(`✅ status.json written to ${outPath}\n`);
 }
 
 main().catch(err => {
