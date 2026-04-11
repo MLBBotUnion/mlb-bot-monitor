@@ -36,6 +36,7 @@ jobs:
         run: |
           git config user.name  "MLB Bot Monitor"
           git config user.email "monitor@github-actions"
+          git add public/status.json public/twitter-history.json
           git add public/status.json
           git diff --staged --quiet || git commit -m "chore: update bot status [skip ci]"
           git push
