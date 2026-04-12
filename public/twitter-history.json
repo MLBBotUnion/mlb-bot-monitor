@@ -10,7 +10,11 @@
     },
     {
       "date": "2026-04-12",
-      "followers": {}
+      "followers": {
+        "acuna-hr": 8,
+        "dont-jinx-it": 3,
+        "4040-tracker": 4
+      }
     }
   ]
 }
