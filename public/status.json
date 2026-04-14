@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-14T00:06:18.618Z",
+  "generatedAt": "2026-04-14T03:39:11.713Z",
   "bots": {
     "acuna-hr": {
       "id": "acuna-hr",
@@ -11,31 +11,31 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 103,
+          "latency": 198,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-04-14T00:06:16.192Z"
+          "checkedAt": "2026-04-14T03:39:07.258Z"
         },
         "statcast": {
           "status": "HEALTHY",
-          "latency": 278,
+          "latency": 153,
           "httpCode": 200,
           "label": "Statcast",
-          "checkedAt": "2026-04-14T00:06:16.471Z"
+          "checkedAt": "2026-04-14T03:39:07.411Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 86,
+          "latency": 118,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-14T00:06:16.558Z"
+          "checkedAt": "2026-04-14T03:39:07.529Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 82,
+          "latency": 85,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-04-14T00:06:16.640Z"
+          "checkedAt": "2026-04-14T03:39:07.614Z"
         }
       },
       "twitter": {
@@ -54,7 +54,7 @@
         },
         "followerDelta7d": -1
       },
-      "scannedAt": "2026-04-14T00:06:16.848Z"
+      "scannedAt": "2026-04-14T03:39:08.060Z"
     },
     "dont-jinx-it": {
       "id": "dont-jinx-it",
@@ -66,31 +66,31 @@
       "checks": {
         "mlb_live": {
           "status": "HEALTHY",
-          "latency": 36,
+          "latency": 49,
           "httpCode": 200,
           "label": "MLB Live Feed",
-          "checkedAt": "2026-04-14T00:06:16.884Z"
+          "checkedAt": "2026-04-14T03:39:08.109Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 47,
+          "latency": 45,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-14T00:06:16.932Z"
+          "checkedAt": "2026-04-14T03:39:08.154Z"
         },
         "gcp_pubsub": {
           "status": "HEALTHY",
-          "latency": 317,
+          "latency": 202,
           "httpCode": 403,
           "label": "GCP Pub/Sub",
-          "checkedAt": "2026-04-14T00:06:17.249Z"
+          "checkedAt": "2026-04-14T03:39:08.356Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 101,
+          "latency": 111,
           "httpCode": 403,
           "label": "GCP Function",
-          "checkedAt": "2026-04-14T00:06:17.350Z"
+          "checkedAt": "2026-04-14T03:39:08.468Z"
         }
       },
       "twitter": {
@@ -109,7 +109,7 @@
         },
         "followerDelta7d": -1
       },
-      "scannedAt": "2026-04-14T00:06:17.515Z"
+      "scannedAt": "2026-04-14T03:39:08.679Z"
     },
     "4040-tracker": {
       "id": "4040-tracker",
@@ -121,50 +121,50 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 35,
+          "latency": 32,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-04-14T00:06:17.550Z"
+          "checkedAt": "2026-04-14T03:39:08.712Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 50,
+          "latency": 44,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-14T00:06:17.600Z"
+          "checkedAt": "2026-04-14T03:39:08.756Z"
         },
         "gcp_scheduler": {
           "status": "HEALTHY",
-          "latency": 802,
+          "latency": 2706,
           "httpCode": 200,
           "label": "Cloud Scheduler",
-          "checkedAt": "2026-04-14T00:06:18.402Z"
+          "checkedAt": "2026-04-14T03:39:11.462Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 21,
+          "latency": 41,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-04-14T00:06:18.424Z"
+          "checkedAt": "2026-04-14T03:39:11.503Z"
         }
       },
       "twitter": {
         "handle": "4040tracker",
-        "followers": 4,
+        "followers": 5,
         "following": 92,
-        "tweetCount": 66,
+        "tweetCount": 74,
         "lastTweet": {
-          "id": "2043840439338328464",
-          "text": "🟢 STOLEN BASE #7\nOneil Cruz (PIT) — 5 HR, 7 SB\n\nProjecting 51 HR / 71 SB\n40/40 probability: 8.0%\n\n3 players currently on pace for 40/40\n\n#MLB #4040Watch #PIT https://t.co/eyWrSAObzJ",
-          "createdAt": "2026-04-13T23:55:08.000Z",
+          "id": "2043889512707743941",
+          "text": "🔴 HOME RUN #5\nAndy Pages (LAD) — 5 HR, 2 SB\n\nProjecting 51 HR / 20 SB\n40/40 probability: 1.4%\n\n3 players currently on pace for 40/40\n\n#MLB #4040Watch #LAD https://t.co/aEE5w5R51j",
+          "createdAt": "2026-04-14T03:10:08.000Z",
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://twitter.com/4040tracker/status/2043840439338328464"
+          "url": "https://twitter.com/4040tracker/status/2043889512707743941"
         },
-        "followerDelta7d": 0
+        "followerDelta7d": 1
       },
-      "scannedAt": "2026-04-14T00:06:18.615Z"
+      "scannedAt": "2026-04-14T03:39:11.710Z"
     }
   }
 }
