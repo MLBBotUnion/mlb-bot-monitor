@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T20:26:34.438Z",
+  "generatedAt": "2026-04-19T21:04:42.931Z",
   "bots": {
     "acuna-hr": {
       "id": "acuna-hr",
@@ -11,50 +11,39 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 326,
+          "latency": 144,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-04-19T20:26:31.706Z"
+          "checkedAt": "2026-04-19T21:04:41.248Z"
         },
         "statcast": {
           "status": "HEALTHY",
-          "latency": 159,
+          "latency": 184,
           "httpCode": 200,
           "label": "Statcast",
-          "checkedAt": "2026-04-19T20:26:31.865Z"
+          "checkedAt": "2026-04-19T21:04:41.433Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 97,
-          "httpCode": 401,
+          "latency": 30,
+          "httpCode": 403,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-19T20:26:31.963Z"
+          "checkedAt": "2026-04-19T21:04:41.463Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 94,
+          "latency": 64,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-04-19T20:26:32.058Z"
+          "checkedAt": "2026-04-19T21:04:41.527Z"
         }
       },
       "twitter": {
         "handle": "acuna4040",
-        "followers": 7,
-        "following": 16,
-        "tweetCount": 6,
-        "lastTweet": {
-          "id": "2044216439410766309",
-          "text": "HR: 1/40 — OFF TRACK\nSB: 4/40 — OFF TRACK\n\n#Braves #RonaldAcuna https://t.co/ywputPuycU",
-          "createdAt": "2026-04-15T00:49:13.000Z",
-          "likes": 1,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://twitter.com/acuna4040/status/2044216439410766309"
-        },
-        "followerDelta7d": -1
+        "error": "Parse error: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "lastTweet": null
       },
-      "scannedAt": "2026-04-19T20:26:32.373Z"
+      "scannedAt": "2026-04-19T21:04:41.550Z"
     },
     "dont-jinx-it": {
       "id": "dont-jinx-it",
@@ -66,50 +55,39 @@
       "checks": {
         "mlb_live": {
           "status": "HEALTHY",
-          "latency": 106,
+          "latency": 4,
           "httpCode": 200,
           "label": "MLB Live Feed",
-          "checkedAt": "2026-04-19T20:26:32.479Z"
+          "checkedAt": "2026-04-19T21:04:41.554Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 42,
-          "httpCode": 401,
+          "latency": 15,
+          "httpCode": 403,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-19T20:26:32.521Z"
+          "checkedAt": "2026-04-19T21:04:41.569Z"
         },
         "gcp_pubsub": {
           "status": "HEALTHY",
-          "latency": 254,
+          "latency": 184,
           "httpCode": 403,
           "label": "GCP Pub/Sub",
-          "checkedAt": "2026-04-19T20:26:32.776Z"
+          "checkedAt": "2026-04-19T21:04:41.753Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 197,
+          "latency": 99,
           "httpCode": 403,
           "label": "GCP Function",
-          "checkedAt": "2026-04-19T20:26:32.973Z"
+          "checkedAt": "2026-04-19T21:04:41.852Z"
         }
       },
       "twitter": {
         "handle": "dontjinxitmlb",
-        "followers": 2,
-        "following": 5,
-        "tweetCount": 2,
-        "lastTweet": {
-          "id": "2030827822470561850",
-          "text": "Learn more about the 12 rare MLB events that we track and how we do it 👇\n\nhttps://t.co/RCIKNpPz0O",
-          "createdAt": "2026-03-09T02:07:38.000Z",
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://twitter.com/dontjinxitmlb/status/2030827822470561850"
-        },
-        "followerDelta7d": -1
+        "error": "Parse error: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "lastTweet": null
       },
-      "scannedAt": "2026-04-19T20:26:33.176Z"
+      "scannedAt": "2026-04-19T21:04:41.869Z"
     },
     "4040-tracker": {
       "id": "4040-tracker",
@@ -121,50 +99,42 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 16,
+          "latency": 3,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-04-19T20:26:33.192Z"
+          "checkedAt": "2026-04-19T21:04:41.872Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 42,
-          "httpCode": 401,
+          "latency": 16,
+          "httpCode": 403,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-19T20:26:33.234Z"
+          "checkedAt": "2026-04-19T21:04:41.888Z"
         },
         "gcp_scheduler": {
           "status": "HEALTHY",
-          "latency": 948,
+          "latency": 862,
           "httpCode": 200,
           "label": "Cloud Scheduler",
-          "checkedAt": "2026-04-19T20:26:34.182Z"
+          "checkedAt": "2026-04-19T21:04:42.751Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 49,
+          "latency": 39,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-04-19T20:26:34.231Z"
+          "checkedAt": "2026-04-19T21:04:42.790Z"
         }
       },
       "twitter": {
         "handle": "4040tracker",
         "followers": 14,
         "following": 92,
-        "tweetCount": 156,
-        "lastTweet": {
-          "id": "2045951859412615603",
-          "text": "🟢 STOLEN BASE #7\nNico Hoerner (CHC) — 3 HR, 7 SB\n\nProjecting 23 HR / 54 SB\n40/40 probability: 0.2%\n\n2 players currently on pace for 40/40\n\n#MLB #4040Watch #CHC https://t.co/vIWDLF8sl8",
-          "createdAt": "2026-04-19T19:45:09.000Z",
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://twitter.com/4040tracker/status/2045951859412615603"
-        },
+        "tweetCount": 158,
+        "lastTweet": null,
         "followerDelta7d": 9
       },
-      "scannedAt": "2026-04-19T20:26:34.434Z"
+      "scannedAt": "2026-04-19T21:04:42.928Z"
     }
   }
 }
