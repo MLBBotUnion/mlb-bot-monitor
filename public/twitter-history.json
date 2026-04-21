@@ -1,14 +1,6 @@
 {
   "snapshots": [
     {
-      "date": "2026-04-11",
-      "followers": {
-        "acuna-hr": 8,
-        "dont-jinx-it": 3,
-        "4040-tracker": 4
-      }
-    },
-    {
       "date": "2026-04-12",
       "followers": {
         "acuna-hr": 8,
@@ -74,6 +66,14 @@
         "acuna-hr": 8,
         "dont-jinx-it": 2,
         "4040-tracker": 15
+      }
+    },
+    {
+      "date": "2026-04-21",
+      "followers": {
+        "acuna-hr": 8,
+        "dont-jinx-it": 2,
+        "4040-tracker": 16
       }
     }
   ]
