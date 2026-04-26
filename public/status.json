@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-26T00:05:44.740Z",
+  "generatedAt": "2026-04-26T03:54:00.881Z",
   "bots": {
     "acuna-hr": {
       "id": "acuna-hr",
@@ -11,50 +11,50 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 259,
+          "latency": 278,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-04-26T00:05:41.782Z"
+          "checkedAt": "2026-04-26T03:53:56.620Z"
         },
         "statcast": {
           "status": "HEALTHY",
-          "latency": 119,
+          "latency": 201,
           "httpCode": 200,
           "label": "Statcast",
-          "checkedAt": "2026-04-26T00:05:41.902Z"
+          "checkedAt": "2026-04-26T03:53:56.821Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 82,
+          "latency": 143,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-26T00:05:41.984Z"
+          "checkedAt": "2026-04-26T03:53:56.964Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 104,
+          "latency": 129,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-04-26T00:05:42.089Z"
+          "checkedAt": "2026-04-26T03:53:57.093Z"
         }
       },
       "twitter": {
         "handle": "acuna4040",
         "followers": 11,
         "following": 31,
-        "tweetCount": 7,
+        "tweetCount": 8,
         "lastTweet": {
-          "id": "2047828489206677529",
-          "text": "HR: 2/40 — OFF TRACK\nSB: 4/40 — OFF TRACK\n\n#Braves #RonaldAcuna https://t.co/Ysa2jTenSW",
-          "createdAt": "2026-04-25T00:02:13.000Z",
-          "likes": 1,
+          "id": "2048221084609114296",
+          "text": "HR: 2/40 — OFF TRACK\nSB: 5/40 — OFF TRACK\n\n#Braves #RonaldAcuna https://t.co/5G4XbOK6ZK",
+          "createdAt": "2026-04-26T02:02:15.000Z",
+          "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://twitter.com/acuna4040/status/2047828489206677529"
+          "url": "https://twitter.com/acuna4040/status/2048221084609114296"
         },
         "followerDelta7d": 4
       },
-      "scannedAt": "2026-04-26T00:05:42.347Z"
+      "scannedAt": "2026-04-26T03:53:57.337Z"
     },
     "dont-jinx-it": {
       "id": "dont-jinx-it",
@@ -66,31 +66,31 @@
       "checks": {
         "mlb_live": {
           "status": "HEALTHY",
-          "latency": 52,
+          "latency": 75,
           "httpCode": 200,
           "label": "MLB Live Feed",
-          "checkedAt": "2026-04-26T00:05:42.399Z"
+          "checkedAt": "2026-04-26T03:53:57.412Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 39,
+          "latency": 43,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-26T00:05:42.438Z"
+          "checkedAt": "2026-04-26T03:53:57.455Z"
         },
         "gcp_pubsub": {
           "status": "HEALTHY",
-          "latency": 128,
+          "latency": 123,
           "httpCode": 200,
           "label": "GCP Pub/Sub",
-          "checkedAt": "2026-04-26T00:05:42.566Z"
+          "checkedAt": "2026-04-26T03:53:57.579Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 90,
+          "latency": 108,
           "httpCode": 200,
           "label": "GCP Function",
-          "checkedAt": "2026-04-26T00:05:42.656Z"
+          "checkedAt": "2026-04-26T03:53:57.688Z"
         }
       },
       "twitter": {
@@ -109,7 +109,7 @@
         },
         "followerDelta7d": 0
       },
-      "scannedAt": "2026-04-26T00:05:42.899Z"
+      "scannedAt": "2026-04-26T03:53:57.962Z"
     },
     "4040-tracker": {
       "id": "4040-tracker",
@@ -121,31 +121,31 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 29,
+          "latency": 20,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-04-26T00:05:42.928Z"
+          "checkedAt": "2026-04-26T03:53:57.982Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 38,
+          "latency": 43,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-04-26T00:05:42.966Z"
+          "checkedAt": "2026-04-26T03:53:58.026Z"
         },
         "gcp_scheduler": {
           "status": "HEALTHY",
-          "latency": 1505,
+          "latency": 2615,
           "httpCode": 200,
           "label": "Cloud Scheduler",
-          "checkedAt": "2026-04-26T00:05:44.472Z"
+          "checkedAt": "2026-04-26T03:54:00.642Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 32,
+          "latency": 43,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-04-26T00:05:44.504Z"
+          "checkedAt": "2026-04-26T03:54:00.686Z"
         }
       },
       "twitter": {
@@ -157,14 +157,14 @@
           "id": "2048191605434122469",
           "text": "🔴 HOME RUN #9\nElly De La Cruz (CIN) — 9 HR, 6 SB\n\nProjecting 54 HR / 36 SB\n40/40 probability: 8.3%\n\n2 players currently on pace for 40/40\n\n#MLB #4040Watch #CIN https://t.co/kNM8sVvHDS",
           "createdAt": "2026-04-26T00:05:06.000Z",
-          "likes": 0,
+          "likes": 1,
           "retweets": 0,
           "replies": 0,
           "url": "https://twitter.com/4040tracker/status/2048191605434122469"
         },
         "followerDelta7d": 6
       },
-      "scannedAt": "2026-04-26T00:05:44.737Z"
+      "scannedAt": "2026-04-26T03:54:00.878Z"
     }
   }
 }
