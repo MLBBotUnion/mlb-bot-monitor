@@ -62,7 +62,10 @@
     },
     {
       "date": "2026-05-19",
-      "followers": {}
+      "followers": {
+        "acuna-hr": 10,
+        "dont-jinx-it": 2
+      }
     }
   ]
 }
