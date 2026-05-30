@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T14:26:36.419Z",
+  "generatedAt": "2026-05-30T15:48:18.499Z",
   "bots": {
     "acuna-hr": {
       "id": "acuna-hr",
@@ -11,50 +11,39 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 218,
+          "latency": 156,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-05-30T14:26:25.550Z"
+          "checkedAt": "2026-05-30T15:48:08.682Z"
         },
         "statcast": {
           "status": "HEALTHY",
-          "latency": 259,
+          "latency": 99,
           "httpCode": 200,
           "label": "Statcast",
-          "checkedAt": "2026-05-30T14:26:25.810Z"
+          "checkedAt": "2026-05-30T15:48:08.781Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 108,
-          "httpCode": 401,
+          "latency": 103,
+          "httpCode": 403,
           "label": "X / Twitter API",
-          "checkedAt": "2026-05-30T14:26:25.919Z"
+          "checkedAt": "2026-05-30T15:48:08.884Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 6541,
+          "latency": 6711,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-05-30T14:26:32.460Z"
+          "checkedAt": "2026-05-30T15:48:15.595Z"
         }
       },
       "twitter": {
         "handle": "acuna4040",
-        "followers": 11,
-        "following": 31,
-        "tweetCount": 13,
-        "lastTweet": {
-          "id": "2060492171120185600",
-          "text": "HR: 3/40 — OFF TRACK\nSB: 10/40 — OFF TRACK\n\n#Braves #RonaldAcuna https://t.co/kVBS3XkzeA",
-          "createdAt": "2026-05-29T22:43:10.000Z",
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://twitter.com/acuna4040/status/2060492171120185600"
-        },
-        "followerDelta7d": 1
+        "error": "Parse error: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "lastTweet": null
       },
-      "scannedAt": "2026-05-30T14:26:32.852Z"
+      "scannedAt": "2026-05-30T15:48:15.610Z"
     },
     "dont-jinx-it": {
       "id": "dont-jinx-it",
@@ -66,50 +55,39 @@
       "checks": {
         "mlb_live": {
           "status": "HEALTHY",
-          "latency": 155,
+          "latency": 9,
           "httpCode": 200,
           "label": "MLB Live Feed",
-          "checkedAt": "2026-05-30T14:26:33.007Z"
+          "checkedAt": "2026-05-30T15:48:15.620Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 50,
-          "httpCode": 401,
+          "latency": 16,
+          "httpCode": 403,
           "label": "X / Twitter API",
-          "checkedAt": "2026-05-30T14:26:33.058Z"
+          "checkedAt": "2026-05-30T15:48:15.636Z"
         },
         "gcp_pubsub": {
           "status": "HEALTHY",
-          "latency": 248,
+          "latency": 144,
           "httpCode": 200,
           "label": "GCP Pub/Sub",
-          "checkedAt": "2026-05-30T14:26:33.306Z"
+          "checkedAt": "2026-05-30T15:48:15.780Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 76,
+          "latency": 67,
           "httpCode": 200,
           "label": "GCP Function",
-          "checkedAt": "2026-05-30T14:26:33.382Z"
+          "checkedAt": "2026-05-30T15:48:15.847Z"
         }
       },
       "twitter": {
         "handle": "dontjinxitmlb",
-        "followers": 2,
-        "following": 5,
-        "tweetCount": 2,
-        "lastTweet": {
-          "id": "2030827822470561850",
-          "text": "Learn more about the 12 rare MLB events that we track and how we do it 👇\n\nhttps://t.co/RCIKNpPz0O",
-          "createdAt": "2026-03-09T02:07:38.000Z",
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://twitter.com/dontjinxitmlb/status/2030827822470561850"
-        },
-        "followerDelta7d": 0
+        "error": "Parse error: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
+        "lastTweet": null
       },
-      "scannedAt": "2026-05-30T14:26:33.579Z"
+      "scannedAt": "2026-05-30T15:48:15.863Z"
     },
     "4040-tracker": {
       "id": "4040-tracker",
@@ -121,39 +99,39 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 11,
+          "latency": 25,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-05-30T14:26:33.590Z"
+          "checkedAt": "2026-05-30T15:48:15.888Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 49,
-          "httpCode": 401,
+          "latency": 13,
+          "httpCode": 403,
           "label": "X / Twitter API",
-          "checkedAt": "2026-05-30T14:26:33.639Z"
+          "checkedAt": "2026-05-30T15:48:15.901Z"
         },
         "gcp_scheduler": {
           "status": "HEALTHY",
-          "latency": 2654,
+          "latency": 2553,
           "httpCode": 200,
           "label": "Cloud Scheduler",
-          "checkedAt": "2026-05-30T14:26:36.294Z"
+          "checkedAt": "2026-05-30T15:48:18.455Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 54,
+          "latency": 19,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-05-30T14:26:36.348Z"
+          "checkedAt": "2026-05-30T15:48:18.474Z"
         }
       },
       "twitter": {
         "handle": "4040tracker",
-        "error": "Unknown Twitter API error",
+        "error": "Parse error: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON",
         "lastTweet": null
       },
-      "scannedAt": "2026-05-30T14:26:36.417Z"
+      "scannedAt": "2026-05-30T15:48:18.491Z"
     }
   }
 }
