@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T07:56:31.671Z",
+  "generatedAt": "2026-07-13T11:18:37.811Z",
   "bots": {
     "acuna-hr": {
       "id": "acuna-hr",
@@ -7,35 +7,35 @@
       "emoji": "💥",
       "description": "Tweets every Ronald Acuña home run with Statcast GIF",
       "gcpService": "Cloud Run",
-      "overall": "ERROR",
+      "overall": "HEALTHY",
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 135,
+          "latency": 129,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-07-13T07:56:19.644Z"
+          "checkedAt": "2026-07-13T11:18:24.264Z"
         },
         "statcast": {
           "status": "HEALTHY",
-          "latency": 325,
+          "latency": 1263,
           "httpCode": 200,
           "label": "Statcast",
-          "checkedAt": "2026-07-13T07:56:19.970Z"
+          "checkedAt": "2026-07-13T11:18:25.527Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 76,
+          "latency": 54,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-07-13T07:56:20.046Z"
+          "checkedAt": "2026-07-13T11:18:25.582Z"
         },
         "gcp_function": {
-          "status": "ERROR",
-          "latency": 8000,
-          "error": "Timeout",
+          "status": "HEALTHY",
+          "latency": 8013,
+          "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-07-13T07:56:28.080Z"
+          "checkedAt": "2026-07-13T11:18:33.596Z"
         }
       },
       "twitter": {
@@ -54,7 +54,7 @@
         },
         "followerDelta7d": 0
       },
-      "scannedAt": "2026-07-13T07:56:28.350Z"
+      "scannedAt": "2026-07-13T11:18:33.876Z"
     },
     "dont-jinx-it": {
       "id": "dont-jinx-it",
@@ -66,31 +66,31 @@
       "checks": {
         "mlb_live": {
           "status": "HEALTHY",
-          "latency": 30,
+          "latency": 13,
           "httpCode": 200,
           "label": "MLB Live Feed",
-          "checkedAt": "2026-07-13T07:56:28.380Z"
+          "checkedAt": "2026-07-13T11:18:33.889Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 31,
+          "latency": 26,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-07-13T07:56:28.412Z"
+          "checkedAt": "2026-07-13T11:18:33.916Z"
         },
         "gcp_pubsub": {
           "status": "HEALTHY",
-          "latency": 117,
+          "latency": 123,
           "httpCode": 200,
           "label": "GCP Pub/Sub",
-          "checkedAt": "2026-07-13T07:56:28.529Z"
+          "checkedAt": "2026-07-13T11:18:34.039Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 44,
+          "latency": 54,
           "httpCode": 200,
           "label": "GCP Function",
-          "checkedAt": "2026-07-13T07:56:28.573Z"
+          "checkedAt": "2026-07-13T11:18:34.093Z"
         }
       },
       "twitter": {
@@ -109,7 +109,7 @@
         },
         "followerDelta7d": 0
       },
-      "scannedAt": "2026-07-13T07:56:28.761Z"
+      "scannedAt": "2026-07-13T11:18:34.280Z"
     },
     "4040-tracker": {
       "id": "4040-tracker",
@@ -121,31 +121,31 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 7,
+          "latency": 27,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-07-13T07:56:28.768Z"
+          "checkedAt": "2026-07-13T11:18:34.307Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 31,
+          "latency": 27,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-07-13T07:56:28.800Z"
+          "checkedAt": "2026-07-13T11:18:34.334Z"
         },
         "gcp_scheduler": {
           "status": "HEALTHY",
-          "latency": 2765,
+          "latency": 3391,
           "httpCode": 200,
           "label": "Cloud Scheduler",
-          "checkedAt": "2026-07-13T07:56:31.565Z"
+          "checkedAt": "2026-07-13T11:18:37.726Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 43,
+          "latency": 25,
           "httpCode": 200,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-07-13T07:56:31.608Z"
+          "checkedAt": "2026-07-13T11:18:37.751Z"
         }
       },
       "twitter": {
@@ -153,7 +153,7 @@
         "error": "Unknown Twitter API error",
         "lastTweet": null
       },
-      "scannedAt": "2026-07-13T07:56:31.669Z"
+      "scannedAt": "2026-07-13T11:18:37.809Z"
     }
   }
 }
