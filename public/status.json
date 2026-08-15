@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T05:36:00.977Z",
+  "generatedAt": "2026-08-15T05:58:16.505Z",
   "bots": {
     "acuna-hr": {
       "id": "acuna-hr",
@@ -11,31 +11,31 @@
       "checks": {
         "mlb_api": {
           "status": "HEALTHY",
-          "latency": 159,
+          "latency": 172,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-08-15T05:35:59.815Z"
+          "checkedAt": "2026-08-15T05:58:15.260Z"
         },
         "statcast": {
           "status": "HEALTHY",
-          "latency": 246,
+          "latency": 317,
           "httpCode": 200,
           "label": "Statcast",
-          "checkedAt": "2026-08-15T05:36:00.061Z"
+          "checkedAt": "2026-08-15T05:58:15.577Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 65,
+          "latency": 53,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-08-15T05:36:00.126Z"
+          "checkedAt": "2026-08-15T05:58:15.630Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 82,
+          "latency": 104,
           "httpCode": 404,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-08-15T05:36:00.209Z"
+          "checkedAt": "2026-08-15T05:58:15.736Z"
         }
       },
       "twitter": {
@@ -54,7 +54,7 @@
         },
         "followerDelta7d": 0
       },
-      "scannedAt": "2026-08-15T05:36:00.418Z"
+      "scannedAt": "2026-08-15T05:58:15.943Z"
     },
     "dont-jinx-it": {
       "id": "dont-jinx-it",
@@ -66,31 +66,31 @@
       "checks": {
         "mlb_live": {
           "status": "HEALTHY",
-          "latency": 56,
+          "latency": 53,
           "httpCode": 200,
           "label": "MLB Live Feed",
-          "checkedAt": "2026-08-15T05:36:00.474Z"
+          "checkedAt": "2026-08-15T05:58:15.996Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 27,
+          "latency": 29,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-08-15T05:36:00.501Z"
+          "checkedAt": "2026-08-15T05:58:16.026Z"
         },
         "gcp_pubsub": {
           "status": "HEALTHY",
-          "latency": 113,
+          "latency": 116,
           "httpCode": 404,
           "label": "GCP Pub/Sub",
-          "checkedAt": "2026-08-15T05:36:00.614Z"
+          "checkedAt": "2026-08-15T05:58:16.143Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
-          "latency": 70,
+          "latency": 72,
           "httpCode": 404,
           "label": "GCP Function",
-          "checkedAt": "2026-08-15T05:36:00.685Z"
+          "checkedAt": "2026-08-15T05:58:16.215Z"
         }
       },
       "twitter": {
@@ -98,7 +98,7 @@
         "error": "Could not find user with username: [dontjinxitmlb].",
         "lastTweet": null
       },
-      "scannedAt": "2026-08-15T05:36:00.749Z"
+      "scannedAt": "2026-08-15T05:58:16.291Z"
     },
     "4040-tracker": {
       "id": "4040-tracker",
@@ -113,28 +113,28 @@
           "latency": 3,
           "httpCode": 200,
           "label": "MLB Stats API",
-          "checkedAt": "2026-08-15T05:36:00.752Z"
+          "checkedAt": "2026-08-15T05:58:16.294Z"
         },
         "twitter_api": {
           "status": "HEALTHY",
-          "latency": 27,
+          "latency": 24,
           "httpCode": 401,
           "label": "X / Twitter API",
-          "checkedAt": "2026-08-15T05:36:00.779Z"
+          "checkedAt": "2026-08-15T05:58:16.319Z"
         },
         "gcp_scheduler": {
           "status": "HEALTHY",
-          "latency": 108,
+          "latency": 91,
           "httpCode": 404,
           "label": "Cloud Scheduler",
-          "checkedAt": "2026-08-15T05:36:00.887Z"
+          "checkedAt": "2026-08-15T05:58:16.410Z"
         },
         "gcp_function": {
           "status": "HEALTHY",
           "latency": 41,
           "httpCode": 404,
           "label": "GCP Cloud Run",
-          "checkedAt": "2026-08-15T05:36:00.928Z"
+          "checkedAt": "2026-08-15T05:58:16.451Z"
         }
       },
       "twitter": {
@@ -142,7 +142,7 @@
         "error": "Unknown Twitter API error",
         "lastTweet": null
       },
-      "scannedAt": "2026-08-15T05:36:00.975Z"
+      "scannedAt": "2026-08-15T05:58:16.503Z"
     }
   }
 }
